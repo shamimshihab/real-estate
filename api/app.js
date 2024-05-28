@@ -1,4 +1,9 @@
+import dotenv from "dotenv";
+
+//config dotenv to use env file
+dotenv.config();
 import express from "express";
+import cookierParser from "cookie-parser";
 
 import postRoute from "./routes/post.routh.js";
 
@@ -10,6 +15,7 @@ app.use("/api/test", (req, res) => {
   res.send("it works");
 });
 app.use(express.json());
+app.use(cookierParser());
 app.use("/api/posts", postRoute);
 
 app.use("/api/auth", authRoute);
