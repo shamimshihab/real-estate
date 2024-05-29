@@ -2,14 +2,19 @@ import dotenv from "dotenv";
 
 //config dotenv to use env file
 dotenv.config();
+
+import cors from "cors";
 import express from "express";
 import cookierParser from "cookie-parser";
 
-import postRoute from "./routes/post.routh.js";
+import postRoute from "./routes/post.route.js";
 
-import authRoute from "./routes/auth.routh.js";
+import authRoute from "./routes/auth.route.js";
+import testRoute from "./routes/test.route.js";
 
 const app = express();
+//check the origin
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 app.use("/api/test", (req, res) => {
   res.send("it works");
@@ -19,6 +24,7 @@ app.use(cookierParser());
 app.use("/api/posts", postRoute);
 
 app.use("/api/auth", authRoute);
+app.use("/api/test", testRoute);
 
 // app.use("/api/auth/register", (req, res) => {
 //   res.send("it works");
