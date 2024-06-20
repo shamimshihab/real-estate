@@ -8,29 +8,26 @@ function HomePage() {
       <div className="textContainer">
         <div className="wrapper">
           <h1 className="title">Find Your Dream Place</h1>
-
-          <p>ddddesfewfewfewfwefwefwefwefwefefewfewf</p>
+          <p>dfcsfskdjfbusfb</p>
           <SearchBar />
-
           <div className="boxes">
             <div className="box">
               <h1>16+</h1>
-              <h2>goodd</h2>
+              <h2>Years of Experience</h2>
             </div>
             <div className="box">
-              <h1>16+</h1>
-              <h2>goodd</h2>
+              <h1>200</h1>
+              <h2>Award Gained</h2>
             </div>
             <div className="box">
-              <h1>16+</h1>
-              <h2>goodd</h2>
+              <h1>2000+</h1>
+              <h2>Property Ready</h2>
             </div>
           </div>
         </div>
       </div>
-      <div className="imageContainer">
-        image
-        <img src="/bg.png"></img>
+      <div className="imgContainer">
+        <img src="/bg.png" alt="" />
       </div>
     </div>
   );
