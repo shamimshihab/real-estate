@@ -4,6 +4,7 @@ import { listData } from "../../../lib/dummydata";
 
 import Filter from "../../filter/Filter";
 import Card from "../../card/Card";
+import Map from "../../map/Map";
 function ListPage() {
   const data = listData;
 
@@ -16,6 +17,9 @@ function ListPage() {
             <Card key={item.id} item={item} />
           ))}
         </div>
+      </div>
+      <div className="mapContainer">
+        <Map items={data} />
       </div>
     </div>
   );
