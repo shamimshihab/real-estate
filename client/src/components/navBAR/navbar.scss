@@ -1,19 +1,20 @@
 @import "../../responsive.scss";
 
 nav {
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
 
   a {
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
+
     @include sm {
       display: none;
     }
 
     &:hover {
-      scale: 1.2;
+      scale: 1.05;
     }
   }
 
@@ -27,8 +28,12 @@ nav {
       font-weight: bold;
       font-size: 20px;
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
+
+      img {
+        width: 28px;
+      }
 
       span {
         @include md {
@@ -38,10 +43,6 @@ nav {
         @include sm {
           display: initial;
         }
-      }
-
-      img {
-        width: 28px;
       }
     }
   }
@@ -56,39 +57,86 @@ nav {
     @include md {
       background-color: transparent;
     }
+
     a {
       padding: 12px 24px;
-      margin: 24px;
+      margin: 20px;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+
+      span {
+        @include sm {
+          display: none;
+        }
+      }
+
+      .profile {
+        padding: 12px 24px;
+        background-color: #fece51;
+        cursor: pointer;
+        border: none;
+        position: relative;
+
+        .notification {
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background-color: red;
+          color: white;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
 
     .register {
-      background-color: aquamarine;
+      background-color: #fece51;
     }
 
-    .menuicon {
+    .menuIcon {
       display: none;
       z-index: 999;
-      transition: all 1s ease;
-      @include sm {
-        display: inline;
-      }
+
       img {
         width: 36px;
         height: 36px;
         cursor: pointer;
       }
+
+      @include sm {
+        display: inline;
+      }
     }
+
     .menu {
       position: absolute;
       top: 0;
-      right: -40%;
+      right: -50%;
       background-color: black;
+      color: white;
       height: 100vh;
-      width: 40%;
+      width: 50%;
+      transition: all 1s ease;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       font-size: 24px;
 
       &.active {
@@ -98,7 +146,6 @@ nav {
       @include sm {
         a {
           display: initial;
-          color: white;
         }
       }
     }
