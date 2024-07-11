@@ -12,6 +12,8 @@ import {
 import ListPage from "./components/routes/listPage/listPage";
 import SinglePage from "./components/routes/singlePage/singlePage";
 import ProfilePage from "./components/routes/profilePage/profilePage";
+import Register from "./components/routes/register/register";
+import Login from "./components/routes/login/login";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +24,10 @@ function App() {
         {
           path: "/list",
           element: <ListPage />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
         },
         {
           path: "/",
@@ -35,6 +41,10 @@ function App() {
         {
           path: "/profile",
           element: <ProfilePage />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
         },
       ],
     },

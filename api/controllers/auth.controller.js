@@ -4,7 +4,7 @@ import prisma from "../lib/prisma.js";
 
 export const register = async (req, res) => {
   const { username, email, password } = req.body;
-
+  console.log(username, email, password);
   //has password
 
   const hashedPassword = await bcrypt.hash(password, 10);
