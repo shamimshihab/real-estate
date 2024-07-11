@@ -2,7 +2,7 @@ import "./layout.scss";
 
 import Navbar from "./components/navBAR/Navbar";
 import HomePage from "./components/routes/homePage/HomePage";
-import Layout from "./components/layout/layout";
+import { Layout, RequireAuth } from "./components/layout/layout";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -46,6 +46,21 @@ function App() {
           path: "/register",
           element: <Register />,
         },
+      ],
+    },
+
+    {
+      path: "/",
+      element: <RequireAuth />,
+      children: [
+        {
+          path: "/profile",
+          element: <ProfilePage />,
+        },
+        // {
+        //   path: "/profile/update",
+        //   element: <ProfileUpdatePage />,
+        // },
       ],
     },
   ]);
