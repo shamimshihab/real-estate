@@ -34,7 +34,6 @@ export const updateUser = async (req, res) => {
 
   let updatedPassword = null;
   try {
-    // hashing if new password needs to be updated
     if (password) {
       updatedPassword = await bcrypt.hash(password, 10);
     }
