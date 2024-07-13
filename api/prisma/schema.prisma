@@ -23,7 +23,7 @@ model User{
   email String @unique
  
   password String
-  avater String ?
+  avatar String ?
   createdAt DateTime @default(now())
 
 }
